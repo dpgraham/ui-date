@@ -141,6 +141,7 @@ export default angular.module('ui.date', [])
 
             controller.$validators.uiDateValidator = function uiDateValidator(modelValue, viewValue) {
               return   viewValue === null
+                    || viewValue === undefined
                     || viewValue === ''
                     || angular.isDate(uiDateConverter.stringToDate(attrs.uiDateFormat, viewValue));
             };
